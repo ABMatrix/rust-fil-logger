@@ -102,7 +102,7 @@ pub fn color_logger_format(
     write!(
         writer,
         "{} {} {} > {}",
-        now.now().format("%Y-%m-%dT%H:%M:%S%.3f"),
+        now.now().format("%Y-%m-%dT%H:%M:%S%.3f%z"),
         style(level, level),
         record.module_path().unwrap_or("<unnamed>"),
         record.args(),
@@ -126,7 +126,7 @@ pub fn nocolor_logger_format(
     write!(
         writer,
         "{} {} {} > {}",
-        now.now().format("%Y-%m-%dT%H:%M:%S%.3f"),
+        now.now().format("%Y-%m-%dT%H:%M:%S%.3f%z"),
         record.level(),
         record.module_path().unwrap_or("<unnamed>"),
         record.args(),
